@@ -381,6 +381,13 @@ body{background:#fff}
 .doc .bar{border-radius:0;height:12px}.doc .bar i{border-radius:0}
 .doc .tw{margin:8px 0 6px;overflow-x:auto}
 .doc .note{border-radius:0}
+
+.doc .tw:has(table){overflow:visible}
+.doc details.sec{overflow:visible}
+.doc table.rcase thead th{position:sticky;top:var(--sumh,-18px);z-index:2;box-shadow:0 2px 0 #1f4d36}
+.doc .st2 thead th{position:sticky;top:-18px;z-index:2}
+.doc table.rcase,.doc .st2{border-collapse:separate;border-spacing:0}
+.doc table.rcase th,.doc .st2 th{border-right:1px solid #1f4d36}
 </style>
 </head>
 <body>
@@ -652,7 +659,8 @@ function initDoc(p,n){
   const save=e=>{const el=e.target;if(!el.dataset||!el.dataset.id)return;set(el.dataset.id,el.type==="checkbox"?(el.checked?"1":"0"):el.value);upd()};
   root.querySelectorAll("details.sec").forEach(d=>{const v=get("o_"+d.dataset.sec);if(v!==null)d.open=v==="1";d.addEventListener("toggle",()=>set("o_"+d.dataset.sec,d.open?"1":"0"))});
   root.querySelectorAll("[data-all]").forEach(b=>b.addEventListener("click",()=>root.querySelectorAll("details.sec").forEach(d=>d.open=b.dataset.all==="1")));
-  root.addEventListener("input",save);root.addEventListener("change",save);upd()}
+  root.addEventListener("input",save);root.addEventListener("change",save);upd();
+  const sm=root.querySelector(".sum"),sh=()=>root.style.setProperty("--sumh",sm?Math.max(0,sm.offsetHeight-18)+"px":"-18px");sh();window.addEventListener("resize",sh);if(window.ResizeObserver&&sm)new ResizeObserver(sh).observe(sm)}
 const CONTENU={};
 const SOON={manuel:"Le manuel d’apprentissage de cette compétence sera créé à partir de tes documents.",exercices:"Les exercices de cette compétence seront ajoutés ici.",formatif:"L’évaluation formative de cette compétence sera ajoutée ici.",revision:"Les documents de révision de cette compétence seront ajoutés ici.",outils:"Les outils et gabarits de cette compétence seront ajoutés ici."};
 function panel(m,k){
