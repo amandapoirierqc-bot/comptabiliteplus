@@ -299,9 +299,9 @@ body{background:#fff}
 @media print{body:not(.pwb) .dm{break-inside:avoid}}
 .hn{flex-wrap:nowrap;gap:0}.hn a{white-space:nowrap;padding:8px 8px;font-size:.92rem}header{flex-wrap:nowrap}#q{min-width:0;width:170px;flex:0 1 170px}@media(max-width:1100px){header{flex-wrap:wrap}.hn{flex-wrap:wrap}}
 .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:10px}
-.rcase{background:linear-gradient(160deg,var(--green2),var(--green));color:#fff;border-radius:16px;min-height:170px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 3px 12px #0003;transition:transform .15s}
-.rcase:hover,.rcase:focus-visible{transform:translateY(-4px);outline:none}
-.rcase .ri{font-size:2rem;margin-bottom:auto}.rcase h2{margin:0 0 4px;font-size:1.3rem}.rcase p{margin:0;opacity:.8;font-size:.88rem}
+.rtile{background:linear-gradient(160deg,var(--green2),var(--green));color:#fff;border-radius:16px;min-height:170px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 3px 12px #0003;transition:transform .15s}
+.rtile:hover,.rtile:focus-visible{transform:translateY(-4px);outline:none}
+.rtile .ri{font-size:2rem;margin-bottom:auto}.rtile h2{margin:0 0 4px;font-size:1.3rem}.rtile p{margin:0;opacity:.8;font-size:.88rem}
 
 .cal{max-width:1180px;margin:50px auto;padding:0 4%}
 .cal-h{display:flex;gap:16px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px}.cal-h h2{margin:0;font-size:1.7rem;color:var(--green)}.cal-h p{margin:4px 0 0;color:var(--mut);font-size:.9rem}
@@ -328,7 +328,7 @@ body{background:#fff}
 .rdoc:hover,.rdoc:focus-visible{transform:translateY(-4px);border-color:var(--green2);outline:none}
 .rdoc .ri{font-size:2rem;margin-bottom:auto}.rdoc h3{margin:10px 0 2px;font-size:1.1rem;color:var(--green)}.rdoc p{margin:0;color:var(--mut);font-size:.85rem}
 #res-docs{scroll-margin-top:200px}
-.rback{display:inline-block;margin-bottom:14px;color:var(--green);font-weight:700;text-decoration:none}.rback:hover{text-decoration:underline}a.rcase{text-decoration:none}
+.rback{display:inline-block;margin-bottom:14px;color:var(--green);font-weight:700;text-decoration:none}.rback:hover{text-decoration:underline}a.rtile{text-decoration:none}
 .sv{max-width:640px;margin:0 auto}
 .sv h1{margin:10px 0 14px;line-height:1.05;font-size:3rem}.sv .r1{display:block;color:#d42a1f}.sv .r2{display:block;color:#2f6b8f;padding-left:22%}
 .si{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}.si i{font-style:normal;width:46px;height:46px;border-radius:50%;background:#263040;display:grid;place-items:center;font-size:1.3rem}.si i:nth-child(2n){background:#2f6b8f}.si i:nth-child(3n){background:#d42a1f}
@@ -343,6 +343,44 @@ body{background:#fff}
 #qs{position:fixed;z-index:60;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px #0003;width:340px;max-height:60vh;overflow:auto;padding:6px}
 #qs button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:9px 10px;border-radius:8px;cursor:pointer;font:inherit;color:var(--tx)}
 #qs button:hover,#qs button.on{background:var(--bg)}#qs b{flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:.8rem}#qs small{margin-left:auto;color:var(--mut)}#qs mark{background:#f4e3a1;border-radius:3px;color:inherit}
+
+/* ===== Accueil au module : présentation droite et structurée, fond beige ===== */
+#dlg[open]{display:flex;flex-direction:column;overflow:hidden;background:#ece3cb}
+#dlg .top{flex:none}#dlg .full{max-height:15vh}#dlg .gb{height:12vh}
+#dlg .ttl{flex:none;margin:0;background:var(--paper);padding-top:12px;padding-bottom:6px}
+#dlg .tabs{flex:none;position:static;background:var(--paper)}
+#dlg #pn{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;background:#ece3cb;padding-top:18px;scroll-behavior:smooth}
+.doc{font-size:.97rem;color:var(--tx)}
+.doc .fiche{background:#fbf8ef;border:1px solid #cdc3a3;border-left:6px solid var(--green);padding:14px 20px;margin:0 0 16px}
+.doc .fiche p{margin:2px 0}.doc .fiche .dt{font-size:1.45rem;font-weight:800;color:var(--green);margin:4px 0}
+.doc .fiche .vol{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin:0}
+.doc .fiche .dm{margin:6px 0 0;gap:0}.doc .fiche .dm span{padding:3px 22px 3px 0;margin-right:22px;border-right:1px solid #cdc3a3}.doc .fiche .dm span:last-child{border:0}
+.doc .tg{justify-content:flex-start;margin:0 0 12px}
+.doc .tg button{border-radius:3px;border:1px solid var(--green);background:#fbf8ef;font-weight:600}.doc .tg button:hover{background:var(--green);color:#fff}
+.doc{counter-reset:sec}
+.doc details.sec{border:1px solid #cdc3a3;border-radius:0;background:#fbf8ef;margin:0 0 14px;box-shadow:0 1px 0 #0001}
+.doc details.sec>summary{background:var(--green);color:#fff;padding:11px 16px;font-size:1rem;letter-spacing:.02em;counter-increment:sec;justify-content:flex-start;gap:12px}
+.doc details.sec>summary::before{content:counter(sec);display:inline-grid;place-items:center;width:24px;height:24px;border:1.5px solid #ffffffaa;font-size:.8rem;flex:none}
+.doc details.sec>summary::after{margin-left:auto}
+.doc details.sec>.sc{padding:14px 18px 16px}
+.doc h4{margin:16px 0 6px}
+.doc input.bl,.doc input[type=date]{border-radius:0}
+.doc .st2,.doc table.rcase{border-collapse:collapse;width:100%;table-layout:auto;background:#fff;border:1px solid #cdc3a3}
+.doc .st2 th,.doc table.rcase th{background:#2f6b4c;color:#fff;text-align:left;font-size:.85rem;letter-spacing:.03em;padding:9px 10px;border:1px solid #1f4d36}
+.doc .st2 td,.doc table.rcase td{border:1px solid #d8d0b6;padding:8px 10px;vertical-align:middle}
+.doc .st2 tbody tr:nth-child(even) td,.doc table.rcase tbody tr:nth-child(even) td{background:#fbf8ef}
+.doc table.rcase th:nth-child(n+3),.doc table.rcase td.h{text-align:center;width:1%;white-space:nowrap}
+.doc table.rcase th:last-child{width:110px}
+.doc table.rcase tr.hd td:first-child .tt{font-weight:700}
+.doc table.rcase tr.tot td{background:#d9eadf!important;font-weight:800;color:var(--green)}
+.doc table.rcase input[type=text],.doc table.rcase input.rr{border:1px solid #bdb392;border-radius:0;background:#fffdf6;font:inherit;padding:4px 6px;width:100%;max-width:100px;box-sizing:border-box;text-align:center}
+.doc table.rcase input.rr{max-width:72px}
+.doc table.rcase label{align-items:center}
+.doc table.rcase .st{font-weight:400;color:var(--mut);font-size:.88rem}
+.doc .sum{position:sticky;top:-18px;z-index:2;border-radius:0;border:1px solid #cdc3a3;border-left:6px solid var(--green);background:#fbf8ef;margin:0 0 10px;box-shadow:0 3px 6px #0002}
+.doc .bar{border-radius:0;height:12px}.doc .bar i{border-radius:0}
+.doc .tw{margin:8px 0 6px;overflow-x:auto}
+.doc .note{border-radius:0}
 </style>
 </head>
 <body>
@@ -360,7 +398,7 @@ body{background:#fff}
 </section>
 <section class="view" id="v-res" hidden aria-labelledby="res-t">
 <div class="vh"><span class="mk">C<b>+</b></span><div><h1 id="res-t">Ressources</h1><p>Les ressources de ton centre, au même endroit.</p></div></div>
-<div class="rgrid"><a class="rcase rclk" href="#aide-eleve"><span class="ri" aria-hidden="true">🤝</span><h2>Aide à l’élève</h2><p>Services complémentaires</p></a><article class="rcase" tabindex="0"><span class="ri" aria-hidden="true">📒</span><h2>Bottin</h2><p>Contenu à venir</p></article><a class="rcase rclk" id="rc-docs" href="#documents"><span class="ri" aria-hidden="true">📄</span><h2>Documents</h2><p>4 documents</p></a><article class="rcase" tabindex="0"><span class="ri" aria-hidden="true">📝</span><h2>Questionnaires</h2><p>Contenu à venir</p></article></div>
+<div class="rgrid"><a class="rtile rclk" href="#aide-eleve"><span class="ri" aria-hidden="true">🤝</span><h2>Aide à l’élève</h2><p>Services complémentaires</p></a><article class="rtile" tabindex="0"><span class="ri" aria-hidden="true">📒</span><h2>Bottin</h2><p>Contenu à venir</p></article><a class="rtile rclk" id="rc-docs" href="#documents"><span class="ri" aria-hidden="true">📄</span><h2>Documents</h2><p>4 documents</p></a><article class="rtile" tabindex="0"><span class="ri" aria-hidden="true">📝</span><h2>Questionnaires</h2><p>Contenu à venir</p></article></div>
 
 </section>
 <section class="view" id="v-aide" hidden aria-labelledby="aide-t">
@@ -596,7 +634,7 @@ function docAccueil(n){
   B.forEach((b,i)=>{if(b[0]==="h"){cur={t:b[1],c:[]};secs.push(cur)}else if(cur)cur.c.push(out[i]);else head.push(out[i])});
   const det=secs.map((x,i)=>`<details class="sec" data-sec="s${i}" open><summary>${esc(x.t)}</summary><div class="sc">${x.c.join("")}</div></details>`).join("");
   const tools=secs.length>1?`<p class="tg"><button type="button" data-all="1">Tout déplier</button><button type="button" data-all="0">Tout replier</button></p>`:"";
-  return `<div class="doc">${head.join("")}${tools}${det}</div>`}
+  return `<div class="doc"><div class="fiche">${head.join("")}</div>${tools}${det}</div>`}
 function initDoc(p,n){
   const root=p.querySelector(".doc");if(!root)return;
   const K=id=>"cplus:"+n+":"+id;
@@ -826,7 +864,7 @@ const AL="ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 const gen=()=>{const a=new Uint32Array(6);crypto.getRandomValues(a);return[...a].map(n=>AL[n%AL.length]).join("")};
 let lastM=1;
 function exec(p){const a=p.a,dl=document.querySelector("dialog[open]"),dg=$("#dlg");
- if(a==="scroll"){(dl||window).scrollBy({top:(p.d>0?1:-1)*innerHeight*.7,behavior:"smooth"})}
+ if(a==="scroll"){((dl&&dl.id==="dlg"&&dl.querySelector("#pn"))||dl||window).scrollBy({top:(p.d>0?1:-1)*innerHeight*.6,behavior:"smooth"})}
  else if(a==="tab"&&dg.open){const t=[...dg.querySelectorAll("[role=tab]")],i=t.findIndex(x=>x.getAttribute("aria-selected")==="true"),n=t.length;t[((i<0?0:i)+(p.d>0?1:-1)+n)%n].click()}
  else if(a==="mod"){const T=dg.querySelector(".ttl"),c=T&&M.find(m=>m[1]===T.textContent.trim());const base=c?c[0]:lastM,n=((base-1+(p.d>0?1:-1)+M.length)%M.length)+1;lastM=n;if(dg.open)dg.close();open(n)}
  else if(a==="openm"){if(!dg.open)open(lastM)}
